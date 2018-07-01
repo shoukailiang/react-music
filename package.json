@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/react-router-dom": "^4.2.7",
     "antd": "^3.6.1",
+    "better-scroll": "^1.12.4",
     "eslint": "^4.19.1",
+    "jsonp": "^0.2.1",
+    "prop-types": "^15.6.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts-ts": "2.16.0"
+    "react-scripts-ts": "2.16.0",
+    "swiper": "3.4.2"
   },
   "scripts": {
     "start": "react-app-rewired start --scripts-version react-scripts-ts",
@@ -18,9 +21,13 @@
   },
   "devDependencies": {
     "@types/jest": "^23.0.0",
+    "@types/jsonp": "^0.2.0",
     "@types/node": "^10.3.1",
+    "@types/prop-types": "^15.5.3",
     "@types/react": "^16.3.16",
     "@types/react-dom": "^16.0.6",
+    "@types/react-router-dom": "^4.2.7",
+    "@types/swiper": "3",
     "react-app-rewire-less": "^2.1.1",
     "react-app-rewired": "^1.5.2",
     "ts-import-plugin": "^1.5.2",
