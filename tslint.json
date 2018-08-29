@@ -1,11 +1,5 @@
 {
   "rules": {
-    "align": [
-      true,
-      "parameters",
-      "arguments",
-      "statements"
-    ],
     "class-name": true,
     "eofline": true,
     "interface-name": false,

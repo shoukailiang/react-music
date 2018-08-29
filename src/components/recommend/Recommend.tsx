@@ -34,11 +34,9 @@ class Recommend extends React.Component<Props, State> {
 					this.setState(
 						{
 							sliderList: res.data.slider,
-							// tslint:disable-next-line:align
 						},
 						() => {
 							if (!this.sliderSwiper) {
-								// tslint:disable-next-line:comment-format
 								//初始化轮播图
 								this.sliderSwiper = new Swiper('.slider-container', {
 									loop: true,
@@ -98,7 +96,7 @@ class Recommend extends React.Component<Props, State> {
 
 		return (
 			<div className='music-recommend'>
-				<Scroll refresh={this.state.refreshScroll} onScroll={false} click>
+				<Scroll refresh={this.state.refreshScroll} onScroll={false} click={false}>
 					<div>
 						<div className='slider-container'>
 							<div className='swiper-wrapper'>

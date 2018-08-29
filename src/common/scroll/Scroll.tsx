@@ -3,14 +3,14 @@ import * as ReactDOM from 'react-dom';
 import  BScroll from 'better-scroll';
 import './scroll.less';
 interface Props {
-	refresh: any;
+	refresh: boolean;
 	onScroll: any;
-	click: any;
+	click: boolean;
 }
 class Scroll extends React.Component<Props> {
-	static defaultProps: { click: boolean; refresh: boolean; onScroll: null; };
 	bScroll: any;
 	scrollView: any;
+	static defaultProps: { click: boolean; refresh: boolean; onScroll: null; };
 	componentDidUpdate() {
 		//组件更新后，如果实例化了better-scroll并且需要刷新就调用refresh()函数
 		if (this.bScroll && this.props.refresh === true) {
@@ -58,5 +58,4 @@ Scroll.defaultProps = {
 	refresh: false,
 	onScroll: null,
 };
-
 export default Scroll;
