@@ -3,6 +3,8 @@ import Scroll from '../../common/scroll/Scroll';
 import { getCarousel, getNewAlbum } from '../../api/recommend';
 import * as AlbumModel from '../../model/album';
 import { CODE_SUCCESS } from '../../api/config';
+import Loading from '../../common/loading/loading';
+import LazyLoad, { forceCheck } from 'react-lazyload';
 import Swiper from 'swiper';
 import 'swiper/dist/css/swiper.css';
 import './recommend.less';
@@ -12,6 +14,7 @@ interface State {
 	sliderList: Array<any>;
 	newAlbums: Array<any>;
 	refreshScroll: boolean;
+	loading: boolean;
 }
 
 class Recommend extends React.Component<Props, State> {
@@ -23,6 +26,7 @@ class Recommend extends React.Component<Props, State> {
 			sliderList: [],
 			newAlbums: [],
 			refreshScroll: false,
+			loading: true,
 		};
 	}
 	componentDidMount() {
@@ -60,7 +64,9 @@ class Recommend extends React.Component<Props, State> {
 					albumList.sort((a: any, b: any) => {
 						return new Date(b.public_time).getTime() - new Date(a.public_time).getTime();
 					});
+					//当专辑列表加载完成后隐藏Loading组件，只需要将loading状态值修改为false
 					this.setState({
+						loading: false,
 						newAlbums: albumList,
 					},            () => {
 							//刷新scroll
@@ -83,7 +89,9 @@ class Recommend extends React.Component<Props, State> {
 			return (
 				<div className='album-wrapper' key={album.mId}>
 					<div className='left'>
-						<img src={album.img} width='100%' height='100%' alt={album.name} />
+					<LazyLoad>
+							<img src={album.img} width='100%' height='100%' alt={album.name}/>
+					</LazyLoad>
 					</div>
 					<div className='right'>
 						<div className='album-name'>{album.name}</div>
@@ -96,7 +104,16 @@ class Recommend extends React.Component<Props, State> {
 
 		return (
 			<div className='music-recommend'>
-				<Scroll refresh={this.state.refreshScroll} onScroll={false} click={false}>
+				{/* 	通过查阅react-lazyload的github的使用说明，
+				发现提供了一个forceCheck函数，当元素没有通过scroll（better-scroll是基于css3的transform实现的）或者resize
+				事件加载时强制检查元素位置，这个时候如果出现在屏幕内就会被立即加载。
+				借助Scroll组件暴露的onScroll属性就可以监听到Scroll组件的滚动
+			*/}
+				<Scroll refresh={this.state.refreshScroll} onScroll={(e: any) => {
+					/*检查懒加载组件是否出现在视图中，如果出现就加载组件*/
+					/* 不加 forceCheck 就会出现 当滚动专辑列表的时候，从屏幕外进入屏幕内的图没有了 */
+					forceCheck();
+				}} click={false}>
 					<div>
 						<div className='slider-container'>
 							<div className='swiper-wrapper'>
@@ -118,6 +135,7 @@ class Recommend extends React.Component<Props, State> {
 						</div>
 					</div>
 				</Scroll>
+				<Loading title='正在加载...' show={this.state.loading}/>
 			</div>
 		);
 	}

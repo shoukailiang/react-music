@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/react-lazyload": "^2.3.1",
     "antd": "^3.6.1",
     "better-scroll": "^1.12.4",
     "eslint": "^4.19.1",
@@ -10,6 +11,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-lazyload": "^2.3.0",
     "react-router-dom": "^4.3.1",
     "react-scripts-ts": "2.16.0",
     "swiper": "3.4.2"
