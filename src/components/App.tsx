@@ -6,6 +6,7 @@ import Search from './search/Search';
 import logo from '../assets/imgs/logo.png';
 import './App.less';
 import '../assets/styles/reset.less';
+import '../assets/styles/font.less';
 
 class App extends React.Component {
   render() {

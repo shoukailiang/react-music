@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/react-lazyload": "^2.3.1",
     "antd": "^3.6.1",
     "better-scroll": "^1.12.4",
     "eslint": "^4.19.1",
@@ -14,6 +13,7 @@
     "react-lazyload": "^2.3.0",
     "react-router-dom": "^4.3.1",
     "react-scripts-ts": "2.16.0",
+    "react-transition-group": "^2.4.0",
     "swiper": "3.4.2"
   },
   "scripts": {
@@ -30,6 +30,8 @@
     "@types/react-dom": "^16.0.6",
     "@types/react-router-dom": "^4.2.7",
     "@types/swiper": "3",
+    "@types/react-lazyload": "^2.3.1",
+    "@types/react-transition-group": "^2.0.14",
     "react-app-rewire-less": "^2.1.1",
     "react-app-rewired": "^1.5.2",
     "ts-import-plugin": "^1.5.2",

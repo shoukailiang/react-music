@@ -4,7 +4,7 @@ import  BScroll from 'better-scroll';
 import './scroll.less';
 interface Props {
 	refresh: boolean;
-	onScroll: (e: any) => void;
+	onScroll: any;
 	click: boolean;
 }
 class Scroll extends React.Component<Props> {

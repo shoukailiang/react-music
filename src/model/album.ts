@@ -32,10 +32,35 @@ export function createAlbumByList(data: any) {
 	);
 }
 
+/**
+ *  通过专辑详情数据创建专辑对象函数
+ */
+export function createAlbumByDetail(data: any) {
+	return new Album(
+			data.id,
+			data.mid,
+			data.name,
+			`http://y.gtimg.cn/music/photo_new/T002R300x300M000${data.mid}.jpg?max_age=2592000`,
+			data.singername,
+			data.aDate,
+	);
+}
+
 function filterSinger(singers: any) {
 	// tslint:disable-next-line:indent
 	let singerArray = singers.map((singer: any) => {
 		return singer.singer_name;
 	});
 	return singerArray.join('/');
+}
+
+export function createAlbumBySearch(data: any) {
+	return new Album(
+			data.albumid,
+			data.albummid,
+			data.albumname,
+			`http://y.gtimg.cn/music/photo_new/T002R68x68M000${data.albummid}.jpg?max_age=2592000`,
+			data.singername,
+			'',
+	);
 }
