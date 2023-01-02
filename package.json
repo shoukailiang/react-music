@@ -20,7 +20,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +42,13 @@
     ]
   },
   "devDependencies": {
-    "@craco/craco": "^7.0.0"
+    "@craco/craco": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "@typescript-eslint/parser": "^5.47.1",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "prettier": "^2.8.1"
   }
 }
