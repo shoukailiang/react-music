@@ -5,7 +5,7 @@ interface IProps {
   children?: ReactNode
 }
 
-const Album: FC<IProps> = (props) => {
+const Album: FC<IProps> = () => {
   return (
     <div>
       <div>Album</div>

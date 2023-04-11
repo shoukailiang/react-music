@@ -5,7 +5,7 @@ interface IProps {
   children?: ReactNode
 }
 
-const Download: FC<IProps> = (props) => {
+const Download: FC<IProps> = () => {
   return (
     <div>
       <div>Download</div>

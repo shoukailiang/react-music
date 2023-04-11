@@ -5,7 +5,7 @@ interface IProps {
   children?: ReactNode
 }
 
-const Focus: FC<IProps> = (props) => {
+const Focus: FC<IProps> = () => {
   return (
     <div>
       <div>Focus</div>

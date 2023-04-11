@@ -5,7 +5,7 @@ interface IProps {
   children?: ReactNode
 }
 
-const Mine: FC<IProps> = (props) => {
+const Mine: FC<IProps> = () => {
   return (
     <div>
       <div>Mine</div>
